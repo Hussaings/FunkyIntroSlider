@@ -97,8 +97,8 @@ btnlast.setOnClickListener(new View.OnClickListener() {
         });
         
  ```
- 
- ##Adding Dot Indicator
+##Adding Dot Indicator
+
  Call another version of Constructor of Reference Class
  ```
  Reference reference=new Reference(viewPager,btnNext,btnlast,dotsLayout,R.drawable.selecteditem_dot,R.drawable.nonselecteditem_dot);
@@ -110,3 +110,40 @@ AddBottomDots.addDots(getBaseContext(),0,reference);
 ```
 
 ##Parallexing effects
+for adding parallexing effects,Create a java class MypageTransformer
+Add below code to MypageTransformer.java
+```
+//you can extends any of the 4 transformer listed above
+public class MypageTranformer extends SlidePageTransformer {
+    @Override
+    public void transformPage(View page, float position) {
+        super.transformPage(page, position);
+        int pagePosition = (int) page.getTag();
+        int pageWidth = page.getWidth();
+        int pageHeight = page.getHeight();
+        float pageWidthTimesPosition = pageWidth * position;
+        float absPosition = Math.abs(position);
+        
+        //getting views and adding animations
+        View title = page.findViewById(R.id.title);
+        title.setAlpha(1.0f - absPosition);
+        
+        //animation on description
+        View description = page.findViewById(R.id.description);
+        description.setTranslationY(-pageWidthTimesPosition / 2f);
+        description.setAlpha(1.0f - absPosition);
+
+        View Image = page.findViewById(R.id.image);
+
+        if (pagePosition >= 0 && Image != null) {
+            Image.setAlpha(1.0f - absPosition);
+            Image.setTranslationX(-pageWidthTimesPosition * 1.5f);
+
+        }
+    }
+}
+```
+Now call pageTransformer in MainActivity as
+```
+viewPager.setPageTransformer(false, new MypageTranformer());
+```
