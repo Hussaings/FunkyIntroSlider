@@ -7,7 +7,7 @@ Intermediate Slides           |  Last Slide
 ![](https://github.com/Hussaings/FunkyIntroSlider/blob/master/Screenshot_2016-10-19-09-44-28.png)  |  ![](https://github.com/Hussaings/FunkyIntroSlider/blob/master/Screenshot_2016-10-19-09-44-38.png)
 -----------------------------------------------------------------------------------------------------------------------
 
-##Download [IntroSlider.jar](https://github.com/Hussaings/FunkyIntroSlider/blob/master/introslider.jar)
+##Download [IntroSlider.jar](https://github.com/Hussaings/FunkyIntroSlider.git)
 add jar to app/libs/ 
 
 ## Add Dependency 
@@ -18,4 +18,12 @@ dependencies {
     compile files('libs/introslider.jar')
 }
 ```
+##Include
+set contentview of Launcher activity as [SliderScreen.xml](https://github.com/Hussaings/FunkyIntroSlider/blob/master/SliderScreen.xml)
+
+In AndroidManifest.xml add
+```
+android:theme="@style/Theme.AppCompat.NoActionBar"
+```
+to launcher Activity
 
