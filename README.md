@@ -76,7 +76,8 @@ viewPager.setPageTransformer(false, new SlidePageTransformer());   //ZoomInOut E
 viewPager.setPageTransformer(false, new DepthPageTransformer());   //DepthPaging Effect
 ```
 
-```//add pageChangeListener to viewpager
+```
+//add pageChangeListener to viewpager
 viewPager.addOnPageChangeListener(new PageChangeListener(getBaseContext(),reference));
 ```
 ##Adding Listener to Next and Check Button
