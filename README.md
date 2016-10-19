@@ -98,7 +98,7 @@ btnlast.setOnClickListener(new View.OnClickListener() {
         
  ```
  
- ###Adding Dot Indicator
+ ##Adding Dot Indicator
  Call another version of Constructor of Reference Class
  ```
  Reference reference=new Reference(viewPager,btnNext,btnlast,dotsLayout,R.drawable.selecteditem_dot,R.drawable.nonselecteditem_dot);
@@ -108,3 +108,5 @@ and call a static method
 ```
 AddBottomDots.addDots(getBaseContext(),0,reference);
 ```
+
+##Parallexing effects
