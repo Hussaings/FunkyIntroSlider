@@ -149,4 +149,5 @@ Now call pageTransformer in MainActivity as
 viewPager.setPageTransformer(false, new MypageTranformer());
 ```
 <img src="https://github.com/Hussaings/FunkyIntroSlider/blob/master/Parallaxing.gif" width="300">
+
 This is Simple parallaxing effects,you can set your own animation in MypageTransformer.java file.
