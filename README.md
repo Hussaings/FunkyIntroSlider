@@ -46,6 +46,7 @@ AddSlide addslide=new AddSlide(4); //pass No.of slides as argument(max:6)
         addslide.set(R.layout.slide3, 2);
         addslide.set(R.layout.slide4, 3);
 ```
+get slides from above repository or design your own layouts
 ##Add References
 ```
 Reference reference=new Reference(viewPager,btnNext,btnlast);
@@ -109,8 +110,8 @@ and call a static method
 AddBottomDots.addDots(getBaseContext(),0,reference);
 ```
 
-##Parallexing effects
-for adding parallexing effects,Create a java class MypageTransformer
+##Parallaxing effects
+for adding parallaxing effects,Create a java class MypageTransformer
 Add below code to MypageTransformer.java
 ```
 //you can extends any of the 4 transformer listed above
@@ -147,3 +148,4 @@ Now call pageTransformer in MainActivity as
 ```
 viewPager.setPageTransformer(false, new MypageTranformer());
 ```
+<img src="https://github.com/Hussaings/FunkyIntroSlider/blob/master/Parallaxing.gif" width="300">
