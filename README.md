@@ -19,11 +19,79 @@ dependencies {
 }
 ```
 ##Include
-set contentview of Launcher activity as [SliderScreen.xml](https://github.com/Hussaings/FunkyIntroSlider/blob/master/SliderScreen.xml)
+setContentView(R.layout.SliderScreen) of Launcher activity 
+[SliderScreen.xml](https://github.com/Hussaings/FunkyIntroSlider/blob/master/SliderScreen.xml)
 
 In AndroidManifest.xml add
 ```
 android:theme="@style/Theme.AppCompat.NoActionBar"
 ```
-to launcher Activity
+to Launcher Activity
+
+##Getting Id's
+```
+viewPager = (ViewPager) findViewById(R.id.view_pager);
+        dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
+        btnNext = (ImageButton) findViewById(R.id.btn_next);
+        btnlast = (ImageButton) findViewById(R.id.btn_last);
+```
+##Adding Slides
+```
+AddSlide addslide=new AddSlide(4); //pass No.of slides as argument(max:6)
+
+        addslide.set(R.layout.slide1, 0);
+        addslide.set(R.layout.slide2, 1);
+        addslide.set(R.layout.slide3, 2);
+        addslide.set(R.layout.slide4, 3);
+```
+##Add References
+```
+Reference reference=new Reference(viewPager,btnNext,btnlast);
+```
+##Adding to MainActivity.java
+Your MainActivity Should be Launcher Activity.
+```
+ // Making notification bar transparent
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
+                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        }
+```
+Changing Notification Bar Color
+```
+        ChangeStatusBarColor.changeStatusBarColor(MainActivity2.this);
+```
+Setting Listeners to Viewpager
+```
+//add Adapter to viewpager
+viewPager.setAdapter(new MyViewPagerAdapter(getBaseConte()));
+
+//add pageTransformer to viewpager
+viewPager.setPageTransformer(false, new SlidePageTransformer());   //SimpleSlide Effect
+```
+Add these Lines To change the Sliding Effects
+```
+viewPager.setPageTransformer(false, new ILLusionPageTransformer()); //Illusioin Effect
+viewPager.setPageTransformer(false, new SlidePageTransformer());   //ZoomInOut Effect
+viewPager.setPageTransformer(false, new DepthPageTransformer());   //DepthPaging Effect
+```
+
+```//add pageChangeListener to viewpager
+viewPager.addOnPageChangeListener(new PageChangeListener(getBaseContext(),reference));
+```
+##Adding Listener to Next and Check Button
+```
+btnNext.setOnClickListener(new ButtonNextListener(getBaseContext(),reference));
+        
+ //Check button       
+btnlast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MainActivity2.class));
+                //MainActivity2 is your Next Activity After Slider is exited
+                finish();
+            }
+        });
+        
+ ```
 
