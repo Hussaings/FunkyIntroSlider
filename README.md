@@ -7,7 +7,7 @@ Intermediate Slides           |  Last Slide
 ![](https://github.com/Hussaings/FunkyIntroSlider/blob/master/Screenshot_2016-10-19-09-44-28.png)  |  ![](https://github.com/Hussaings/FunkyIntroSlider/blob/master/Screenshot_2016-10-19-09-44-38.png)
 -----------------------------------------------------------------------------------------------------------------------
 
-##Download [IntroSlider.jar](https://github.com/Hussaings/FunkyIntroSlider.git)
+##Download [FunkyIntroSlider.jar](https://github.com/Hussaings/FunkyIntroSlider/blob/master/FunkyIntroSlider.jar)
 add jar to app/libs/ 
 
 ## Add Dependency 
@@ -15,7 +15,7 @@ add following lines in build.gradle (app module)
 ```
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile files('libs/introslider.jar')
+    compile files('libs/FunkyIntroSlider.jar')
 }
 ```
 get Resources from [res](https://github.com/Hussaings/FunkyIntroSlider/tree/master/res)
