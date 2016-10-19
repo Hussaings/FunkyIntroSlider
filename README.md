@@ -18,6 +18,8 @@ dependencies {
     compile files('libs/introslider.jar')
 }
 ```
+get Resources from [res](https://github.com/Hussaings/FunkyIntroSlider/tree/master/res)
+
 ##Include
 setContentView(R.layout.SliderScreen) of Launcher activity 
 [SliderScreen.xml](https://github.com/Hussaings/FunkyIntroSlider/blob/master/SliderScreen.xml)
@@ -95,4 +97,14 @@ btnlast.setOnClickListener(new View.OnClickListener() {
         });
         
  ```
-
+ 
+ ###Adding Dot Indicator
+ Call another version of Constructor of Reference Class
+ ```
+ Reference reference=new Reference(viewPager,btnNext,btnlast,dotsLayout,R.drawable.selecteditem_dot,R.drawable.nonselecteditem_dot);
+```
+dotsLayout(LinearLayout)
+and call a static method
+```
+AddBottomDots.addDots(getBaseContext(),0,reference);
+```
