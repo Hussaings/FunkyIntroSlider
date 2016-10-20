@@ -105,7 +105,8 @@ btnlast.setOnClickListener(new View.OnClickListener() {
  Reference reference=new Reference(viewPager,btnNext,btnlast,dotsLayout,R.drawable.selecteditem_dot,R.drawable.nonselecteditem_dot);
 ```
 dotsLayout(LinearLayout)
-and call a static method
+
+and call a static method of class AddBottomDots in your MainActivity
 ```
 AddBottomDots.addDots(getBaseContext(),0,reference);
 ```
