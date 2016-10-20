@@ -46,7 +46,7 @@ AddSlide addslide=new AddSlide(4); //pass No.of slides as argument(max:6)
         addslide.set(R.layout.slide3, 2);
         addslide.set(R.layout.slide4, 3);
 ```
-get slides from above repository or design your own layouts
+get slides from res folder or design your own layouts
 ##Add References
 ```
 Reference reference=new Reference(viewPager,btnNext,btnlast);
